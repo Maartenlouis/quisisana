@@ -10,7 +10,7 @@ import TestimonialsCarousel from "@/components/sections/testimonials-carousel";
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-full min-h-screen overflow-x-hidden">
       <Header />
       <Hero />
       <Logos />
