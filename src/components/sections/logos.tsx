@@ -4,10 +4,10 @@ import Section from "@/components/section";
 export default function Logos() {
   return (
     <Section title="Unsere Partner" subtitle="">
-      <div className="relative">
+      <div className="relative ">
         {/* Decorative background elements */}
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute -top-4 -right-4 h-64 w-64 rounded-full bg-secondary/10 blur-3xl" />
+        <div className="absolute   inset-0 -z-10 overflow-hidden">
+          <div className="absolute  -top-4 -right-4 h-64 w-64 rounded-full bg-secondary/10 blur-3xl" />
           <div className="absolute -bottom-4 -left-4 h-64 w-64 rounded-full bg-secondary/10 blur-3xl" />
         </div>
 

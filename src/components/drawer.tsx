@@ -1,3 +1,5 @@
+"use client";
+
 import { Icons } from "@/components/icons";
 import { buttonVariants } from "@/components/ui/button";
 import {
@@ -10,11 +12,21 @@ import {
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { IoMenuSharp } from "react-icons/io5";
+import { useState } from "react";
 
-export default function drawerDemo() {
+export default function DrawerDemo() {
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+
+  const handleLinkClick = (href: string) => {
+    setOpen(false); // Close drawer before navigation
+    router.push(href);
+  };
+
   return (
-    <Drawer>
+    <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger>
         <IoMenuSharp className="text-2xl" />
       </DrawerTrigger>
@@ -23,6 +35,10 @@ export default function drawerDemo() {
           <div className="">
             <Link
               href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                handleLinkClick("/");
+              }}
               title="brand-logo"
               className="relative mr-6 flex items-center space-x-2"
             >
@@ -36,7 +52,14 @@ export default function drawerDemo() {
                   {item.trigger ? (
                     <span className="font-semibold">{item.trigger}</span>
                   ) : (
-                    <Link href={item.href || ""} className="font-semibold">
+                    <Link
+                      href={item.href || ""}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleLinkClick(item.href || "");
+                      }}
+                      className="font-semibold"
+                    >
                       {item.label}
                     </Link>
                   )}
@@ -48,6 +71,10 @@ export default function drawerDemo() {
         <DrawerFooter>
           <Link
             href="/kontakt"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick("/kontakt");
+            }}
             className={cn(
               buttonVariants({ variant: "default" }),
               "w-full sm:w-auto text-background flex gap-2"
