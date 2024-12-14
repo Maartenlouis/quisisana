@@ -33,25 +33,25 @@ const reviews = [
 
   {
     author: "diegooo92",
-    text: "⭐⭐⭐⭐⭐",
+    text: "",
     rating: 5,
     company: "Google",
   },
   {
     author: "S. Fischer",
-    text: "⭐⭐⭐⭐⭐",
+    text: "",
     rating: 5,
     company: "Google",
   },
   {
     author: "Dominik Grimpe",
-    text: "⭐⭐⭐⭐⭐",
+    text: "",
     rating: 5,
     company: "Google",
   },
   {
     author: "Heiko Frenkel",
-    text: "⭐⭐⭐⭐⭐",
+    text: "",
     rating: 5,
     company: "Google",
   },
@@ -59,10 +59,13 @@ const reviews = [
 
 export default function Component() {
   return (
-    <Section
-      title="Kundenbewertungen"
-      subtitle="Was unsere Kunden über uns sagen"
-    >
+    <Section>
+      <div className="flex flex-col text-primary font-bold  items-center justify-center">
+        <h2 className="text-4xl font-bold text-center">Kundenbewertungen</h2>
+        <p className="text-center text-lg text-foreground/80 max-w-2xl mx-auto px-4 md:px-10 leading-relaxed">
+          Was unsere Kunden über uns sagen
+        </p>
+      </div>
       <Carousel>
         <div className="max-w-2xl mx-auto relative">
           <CarouselContent>
