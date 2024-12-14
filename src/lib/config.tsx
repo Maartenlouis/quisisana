@@ -67,7 +67,7 @@ export const siteConfig = {
       label: "Sportphysiotherapie",
     },
     {
-      href: "/uebers-uns",
+      href: "/ueber-uns",
       label: "Über uns",
     },
   ],
